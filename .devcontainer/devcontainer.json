@@ -2,7 +2,7 @@
     "name": "Python & Rust Team Env",
     // 1. 选择底包：使用微软官方优化过的 Python 开发镜像 (基于 Debian)
     // 这里的 '3.11' 可以换成你们团队用的版本
-    "image": "mcr.microsoft.com/devcontainers/python:3.11",
+    "image": "codercom/enterprise-base:ubuntu",
   
     // 2. Features (魔法所在)：像乐高一样安装额外工具
     // 官方源：https://github.com/devcontainers/features
