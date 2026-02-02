@@ -8,33 +8,33 @@
     // 官方源：https://github.com/devcontainers/features
     "features": {
       // 注入 Rust 环境 (cargo, rustc)
-      "ghcr.io/devcontainers/features/rust:1": {
-        "version": "latest",
-        "profile": "minimal"
-      },
+    //   "ghcr.io/devcontainers/features/rust:1": {
+    //     "version": "latest",
+    //     "profile": "minimal"
+    //   },
       // 常用工具 (git, zsh, curl 等，通常底包自带，写上也无妨)
-      "ghcr.io/devcontainers/features/common-utils:2": {
-        "configureZshAsDefaultShell": true
-      },
-      "ghcr.io/coder/devcontainer-features/code-server:1": {
-        "version": "latest"
-      }
+    //   "ghcr.io/devcontainers/features/common-utils:2": {
+    //     "configureZshAsDefaultShell": true
+    //   },
+    //   "ghcr.io/coder/devcontainer-features/code-server:1": {
+    //     "version": "latest"
+    //   }
     },
   
     // 3. 配置 IDE (VS Code)
     "customizations": {
       "vscode": {
         "settings": {
-          "python.defaultInterpreterPath": "/usr/local/bin/python",
+        //   "python.defaultInterpreterPath": "/usr/local/bin/python",
           "editor.formatOnSave": true
         },
         // 自动给团队成员安装插件
         "extensions": [
-          "ms-python.python",          // Python 官方插件
-          "ms-python.vscode-pylance",  // 代码提示
-          "njpwerner.autodocstring",   // 自动写文档
-          "rust-lang.rust-analyzer",   // Rust 必备
-          "tamasfe.even-better-toml"   // 编辑 Cargo.toml 用
+        //   "ms-python.python",          // Python 官方插件
+        //   "ms-python.vscode-pylance",  // 代码提示
+        //   "njpwerner.autodocstring",   // 自动写文档
+        //   "rust-lang.rust-analyzer",   // Rust 必备
+        //   "tamasfe.even-better-toml"   // 编辑 Cargo.toml 用
         ]
       }
     },
