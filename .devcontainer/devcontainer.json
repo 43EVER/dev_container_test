@@ -2,7 +2,7 @@
     "name": "Python & Rust Team Env",
     // 1. 选择底包：使用微软官方优化过的 Python 开发镜像 (基于 Debian)
     // 这里的 '3.11' 可以换成你们团队用的版本
-    "image": "codercom/enterprise-base:ubuntu",
+    "image": "mcr.microsoft.com/devcontainers/python:3.11",
   
     // 2. Features (魔法所在)：像乐高一样安装额外工具
     // 官方源：https://github.com/devcontainers/features
@@ -12,10 +12,10 @@
     //     "version": "latest",
     //     "profile": "minimal"
     //   },
-      // 常用工具 (git, zsh, curl 等，通常底包自带，写上也无妨)
-    //   "ghcr.io/devcontainers/features/common-utils:2": {
-    //     "configureZshAsDefaultShell": true
-    //   },
+    //   常用工具 (git, zsh, curl 等，通常底包自带，写上也无妨)
+      "ghcr.io/devcontainers/features/common-utils:2": {
+        "configureZshAsDefaultShell": true
+      }
     //   "ghcr.io/coder/devcontainer-features/code-server:1": {
     //     "version": "latest"
     //   }
