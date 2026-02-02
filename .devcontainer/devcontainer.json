@@ -1,0 +1,53 @@
+{
+    "name": "Python & Rust Team Env",
+    // 1. 选择底包：使用微软官方优化过的 Python 开发镜像 (基于 Debian)
+    // 这里的 '3.11' 可以换成你们团队用的版本
+    "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  
+    // 2. Features (魔法所在)：像乐高一样安装额外工具
+    // 官方源：https://github.com/devcontainers/features
+    "features": {
+      // 注入 Rust 环境 (cargo, rustc)
+      "ghcr.io/devcontainers/features/rust:1": {
+        "version": "latest",
+        "profile": "minimal"
+      },
+      // 常用工具 (git, zsh, curl 等，通常底包自带，写上也无妨)
+      "ghcr.io/devcontainers/features/common-utils:2": {
+        "configureZshAsDefaultShell": true
+      },
+      "ghcr.io/coder/devcontainer-features/code-server:1": {
+        "version": "latest"
+      }
+    },
+  
+    // 3. 配置 IDE (VS Code)
+    "customizations": {
+      "vscode": {
+        "settings": {
+          "python.defaultInterpreterPath": "/usr/local/bin/python",
+          "editor.formatOnSave": true
+        },
+        // 自动给团队成员安装插件
+        "extensions": [
+          "ms-python.python",          // Python 官方插件
+          "ms-python.vscode-pylance",  // 代码提示
+          "njpwerner.autodocstring",   // 自动写文档
+          "rust-lang.rust-analyzer",   // Rust 必备
+          "tamasfe.even-better-toml"   // 编辑 Cargo.toml 用
+        ]
+      }
+    },
+  
+    // 4. 端口转发 (如果有 Web 服务)
+    // "forwardPorts": [8000],
+  
+    // 5. 生命周期钩子：容器创建后自动执行的命令
+    // 这里可以自动安装 Python 依赖
+    "postCreateCommand": "pip install uv && uv sync",
+  
+    // 6. 指定容器内的用户，官方镜像默认有一个 'vscode' 非 root 用户
+    "remoteUser": "vscode"
+  }
+  
+  
